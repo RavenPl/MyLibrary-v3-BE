@@ -7,13 +7,13 @@ import {ResultSetHeader} from "mysql2";
 
 export class BookRecord implements BookEntity {
 
-    id: string;
+    id?: string;
     title: string;
     author: string;
     pages: number;
     status: string;
 
-    constructor(obj: BookRecord) {
+    constructor(obj: BookEntity) {
 
         this.id = obj.id;
         this.title = obj.title;
@@ -41,11 +41,11 @@ export class BookRecord implements BookEntity {
         return resp.length === 0 ? null : resp.map(obj => new BookRecord(obj))
     }
 
-    static async getOne(id: string): Promise<BookRecord> {
+    static async getOne(id: string): Promise<BookRecord | null> {
 
         const [book] = await pool.execute('SELECT * FROM `books` WHERE `id` = :id', {id}) as BookRecordResults;
 
-        return book.map(obj => new BookRecord(obj))[0]
+        return book.length === 0 ? null : book.map(obj => new BookRecord(obj))[0]
     }
 
     static async clearList(): Promise<void> {

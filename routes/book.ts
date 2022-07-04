@@ -41,7 +41,10 @@ bookRouter
     .delete('/:id', async (req, res) => {
 
         const book = await BookRecord.getOne(req.params.id);
-        await book.delete();
+
+        if (book) {
+            await book.delete();
+        }
 
         res.end()
     })
@@ -53,9 +56,9 @@ bookRouter
         res.end()
     })
 
-    .put('/edit/:id', async (req, res) => {
+    .patch('/edit/:id', async (req, res) => {
 
-        const editedBook = await BookRecord.getOne(req.params.id);
+        const editedBook = await BookRecord.getOne(req.params.id) as BookRecord;
 
         const {title, author} = req.body as UpdatedBookRecord;
         const updatedBook = new BookRecord({
@@ -64,7 +67,7 @@ bookRouter
             author: author.trim(),
         });
 
-        const result = await editedBook.checkUpdatedBookTitle(editedBook.id, updatedBook.title);
+        const result = editedBook.id && await editedBook.checkUpdatedBookTitle(editedBook.id, updatedBook.title);
 
         if (result) {
             throw new ValidationError('You already have this title in your library!')
