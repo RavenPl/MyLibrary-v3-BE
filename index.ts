@@ -1,6 +1,7 @@
 import express, {json} from "express";
 import 'express-async-errors';
 import './utils/db'
+import cors from 'cors';
 
 import {handleError} from "./utils/errors";
 import {bookRouter} from "./routes/book";
@@ -13,9 +14,13 @@ app.use(json());
 app.use('/', homeRouter)
 app.use('/books', bookRouter);
 
+app.use(cors({
+    origin: 'http://localhost:3000',
+}));
+
 app.use(handleError);
 
 
-app.listen(3000, 'localhost', () => {
-    console.log('Listening on 3000... http://localhost:3000');
+app.listen(3001, 'localhost', () => {
+    console.log('Listening on 3001... http://localhost:3001');
 })
