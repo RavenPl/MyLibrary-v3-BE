@@ -9,9 +9,9 @@ bookRouter
 
     .get('/', async (req, res) => {
 
-        res.render('home', {
-            books: await BookRecord.getAll(),
-        })
+        const books = await BookRecord.getAll();
+
+        res.json({books})
     })
 
     .get('/edit/:id', async (req, res) => {
@@ -21,27 +21,8 @@ bookRouter
             throw new NoFoundError()
         }
 
-        res
-            .render('book/book-form-edit', {book})
+        res.json({book})
     })
-
-    .get('/delete/all', async (req, res) => {
-
-        res
-            .render('book/book-delete-all')
-    })
-
-    .get('/delete/:id', async (req, res) => {
-
-        const book = await BookRecord.getOne(req.params.id);
-        if (!book) {
-            throw new NoFoundError()
-        }
-
-        res
-            .render('book/book-form-delete', {book})
-    })
-
 
     .post('/', async (req, res) => {
 
@@ -54,9 +35,7 @@ bookRouter
 
         await newBook.insert();
 
-        res
-            .status(201)
-            .render('book/book-added', {newBook})
+        res.json({newBook})
     })
 
     .delete('/:id', async (req, res) => {
@@ -64,16 +43,14 @@ bookRouter
         const book = await BookRecord.getOne(req.params.id);
         await book.delete();
 
-        res
-            .redirect('/books')
+        res.end()
     })
 
     .delete('/delete/all', async (req, res) => {
 
         await BookRecord.clearList();
 
-        res
-            .redirect('/books')
+        res.end()
     })
 
     .put('/edit/:id', async (req, res) => {
@@ -95,6 +72,5 @@ bookRouter
 
         await editedBook.update(updatedBook);
 
-        res
-            .redirect('/books')
+        res.json(editedBook)
     })
