@@ -1,5 +1,5 @@
 import {FieldPacket} from "mysql2";
-import {BookRecord} from "../records/book-record";
+import {BookRecord} from "../../records/book-record";
 
 export interface BookEntity {
     id?: string;
