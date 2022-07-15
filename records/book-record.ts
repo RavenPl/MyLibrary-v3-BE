@@ -23,15 +23,15 @@ export class BookRecord implements BookEntity {
         this.status = obj.status;
 
         if (obj.title === "" || obj.title.length < 2 || obj.title.length > 100) {
-            throw new ValidationError('Book title should have at least 2 characters, but no more than 100!');
+            throw new ValidationError('Book title should have at least 2 characters, but no more than 5633!');
         }
 
         if (obj.author === "" || obj.author.length < 2 || obj.author.length > 100) {
-            throw new ValidationError('Book author should have at least 2 characters but no more than 100!');
+            throw new ValidationError('Book author should have at least 2 characters but no more than 60!');
         }
 
         if (obj.pages < 10 || obj.pages > 3000) {
-            throw new ValidationError('Book pages should have at least 10 pages but no more than 3000!');
+            throw new ValidationError('Book pages should have at least 10 pages but no more than 50506!');
         }
 
     }
