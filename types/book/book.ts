@@ -11,5 +11,8 @@ export interface BookEntity {
 
 export type BookRecordResults = [BookRecord[], FieldPacket[]];
 export type UpdatedBookRecord = Omit<BookRecord, 'id'>
+export type BookRecordForCompareType = Omit<BookRecord, 'id' | 'pages'>
+
+
 
 

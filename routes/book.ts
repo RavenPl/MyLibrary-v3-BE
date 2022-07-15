@@ -9,12 +9,14 @@ bookRouter
 
     .get('/', async (req, res) => {
 
-        const books = await BookRecord.getAll();
+        const {search, category} = req.query as { search: string, category: string };
 
-        res.json({books})
+        const booksList = await BookRecord.getAll(search.trim(), category);
+
+        res.json({booksList})
     })
 
-    .get('/edit/:id', async (req, res) => {
+    .get('/:id', async (req, res) => {
 
         const book = await BookRecord.getOne(req.params.id);
         if (!book) {
@@ -26,16 +28,26 @@ bookRouter
 
     .post('/', async (req, res) => {
 
-        const {title, author} = req.body as BookRecord;
+        const {title, author, status} = req.body as BookRecord;
         const newBook = new BookRecord({
             ...req.body,
             title: title.trim(),
             author: author.trim(),
+            status: (status === "") ? "not read" : status
         });
 
         await newBook.insert();
 
         res.json({newBook})
+    })
+
+    .delete('/delete/all', async (req, res) => {
+
+        await BookRecord.clearList();
+
+        res.json({
+            message: true,
+        })
     })
 
     .delete('/:id', async (req, res) => {
@@ -46,21 +58,19 @@ bookRouter
             await book.delete();
         }
 
-        res.end()
+        res.json({
+            book
+        })
     })
 
-    .delete('/delete/all', async (req, res) => {
 
-        await BookRecord.clearList();
+    .patch('/:id', async (req, res) => {
 
-        res.end()
-    })
-
-    .patch('/edit/:id', async (req, res) => {
 
         const editedBook = await BookRecord.getOne(req.params.id) as BookRecord;
 
         const {title, author} = req.body as UpdatedBookRecord;
+
         const updatedBook = new BookRecord({
             ...req.body,
             title: title.trim(),

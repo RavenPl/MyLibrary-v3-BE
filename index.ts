@@ -5,21 +5,22 @@ import './utils/db'
 
 import {handleError} from "./utils/errors";
 import {bookRouter} from "./routes/book";
-import {homeRouter} from "./routes/home";
+import {config} from "./config/config";
+import rateLimit from "express-rate-limit";
 
 const app = express();
 
 app.use(json());
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: config.corsOrigin,
 }));
 
-app.use('/', homeRouter)
 app.use('/books', bookRouter);
-
-
 app.use(handleError);
-
+app.use(rateLimit({
+    windowMs: 5 * 60 * 1000,
+    max: 100,
+}));
 
 app.listen(3001, 'localhost', () => {
     console.log('Listening on 3001... http://localhost:3001');
