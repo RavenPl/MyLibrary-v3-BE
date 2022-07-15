@@ -3,6 +3,7 @@ import {v4 as uuid} from 'uuid'
 import {ValidationError} from "../utils/errors";
 import {BookEntity, BookRecordResults} from "../types";
 import {ResultSetHeader} from "mysql2";
+import {nameRefactor, titleRefactor} from "../utils/inputRefactors";
 
 
 export class BookRecord implements BookEntity {
@@ -35,10 +36,20 @@ export class BookRecord implements BookEntity {
 
     }
 
-    static async getAll(): Promise<BookRecord[] | null> {
+    static async getAll(value: string, category: string): Promise<BookRecord[] | null> {
 
-        const [resp] = await pool.execute('SELECT * FROM `books` ORDER BY `title` ASC') as BookRecordResults;
-        return resp.length === 0 ? null : resp.map(obj => new BookRecord(obj))
+        if (category === "title") {
+            const [resp] = await pool.execute('SELECT * FROM `books` WHERE `title` LIKE :value ORDER BY `title` ASC', {
+                value: `${value}%`,
+            }) as BookRecordResults;
+
+            return resp.length === 0 ? null : resp.map(obj => new BookRecord(obj))
+        } else {
+            const [resp] = await pool.execute('SELECT * FROM `books` WHERE `author` LIKE :value ORDER BY `title` ASC', {
+                value: `${value}%`,
+            }) as BookRecordResults;
+            return resp.length === 0 ? null : resp.map(obj => new BookRecord(obj))
+        }
     }
 
     static async getOne(id: string): Promise<BookRecord | null> {
@@ -63,6 +74,7 @@ export class BookRecord implements BookEntity {
             this.id = uuid()
         }
 
+
         const [allBooks] = await pool.execute('SELECT * FROM `books` ORDER BY `title` ASC') as BookRecordResults;
         const [found] = allBooks.filter(obj => obj.title.toUpperCase() === this.title.toUpperCase());
 
@@ -72,8 +84,8 @@ export class BookRecord implements BookEntity {
 
         await pool.execute('INSERT INTO `books`(`id`,`title`,`author`,`pages`,`status`) VALUES(:id, :title, :author, :pages, :status)', {
             id: this.id,
-            title: this.title,
-            author: this.author,
+            title: titleRefactor(this.title),
+            author: nameRefactor(this.author),
             pages: this.pages,
             status: this.status
         })
@@ -99,7 +111,7 @@ export class BookRecord implements BookEntity {
 
     async checkUpdatedBookTitle(id: string, titleUpdate: string): Promise<BookRecord | undefined> {
 
-        const listOfBooks = await BookRecord.getAll();
+        const listOfBooks = await BookRecord.getAll("", "") as BookRecord[];
         const filterBooks = listOfBooks ? listOfBooks.filter(book => book.id !== id) : [];
 
         return filterBooks.find(obj => obj.title.toLowerCase() === titleUpdate.toLowerCase());
