@@ -11,5 +11,4 @@ export const nameRefactor = (name: string) => {
     }
 
     return data.join(" ");
-
 }

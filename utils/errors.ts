@@ -2,12 +2,12 @@ import {NextFunction, Request, Response} from "express";
 
 export class ValidationError extends Error {
 }
-
 export class NoFoundError extends Error {
 }
 
 export const handleError = (err: Error, req: Request, res: Response, next: NextFunction): void => {
 
+    console.log(err);
     if (err instanceof NoFoundError) {
 
         res
@@ -23,6 +23,5 @@ export const handleError = (err: Error, req: Request, res: Response, next: NextF
                 message: err instanceof ValidationError ? err.message : 'Sorry, try again later',
             });
     }
-
 }
 

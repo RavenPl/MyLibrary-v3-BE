@@ -10,7 +10,6 @@ bookRouter
     .get('/', async (req, res) => {
 
         const {search, category} = req.query as { search: string, category: string };
-
         const booksList = await BookRecord.getAll(search.trim(), category);
 
         res.json({booksList})
@@ -53,24 +52,26 @@ bookRouter
     .delete('/:id', async (req, res) => {
 
         const book = await BookRecord.getOne(req.params.id);
-
-        if (book) {
-            await book.delete();
+        if (book === null) {
+            throw new NoFoundError();
         }
 
+        await book.delete();
+
         res.json({
-            book
+            book,
         })
     })
 
-
     .patch('/:id', async (req, res) => {
-
 
         const editedBook = await BookRecord.getOne(req.params.id) as BookRecord;
 
-        const {title, author} = req.body as UpdatedBookRecord;
+        if (editedBook === null) {
+            throw new NoFoundError();
+        }
 
+        const {title, author} = req.body as UpdatedBookRecord;
         const updatedBook = new BookRecord({
             ...req.body,
             title: title.trim(),

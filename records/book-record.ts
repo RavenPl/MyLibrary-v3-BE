@@ -5,7 +5,6 @@ import {BookEntity, BookRecordResults} from "../types";
 import {ResultSetHeader} from "mysql2";
 import {nameRefactor, titleRefactor} from "../utils/inputRefactors";
 
-
 export class BookRecord implements BookEntity {
 
     id?: string;
@@ -30,10 +29,9 @@ export class BookRecord implements BookEntity {
             throw new ValidationError('Book author should have at least 2 characters but no more than 60!');
         }
 
-        if (obj.pages < 10 || obj.pages > 3000) {
+        if (obj.pages < 10 || obj.pages > 50506) {
             throw new ValidationError('Book pages should have at least 10 pages but no more than 50506!');
         }
-
     }
 
     static async getAll(value: string, category: string): Promise<BookRecord[] | null> {
@@ -64,16 +62,15 @@ export class BookRecord implements BookEntity {
         const [result] = await pool.execute("DELETE FROM `books`") as ResultSetHeader[]
 
         if (!result.affectedRows) {
-            throw new ValidationError('Your book list is empty!')
+            throw new ValidationError('Your book list already is empty!')
         }
-
     }
 
     async insert(): Promise<void> {
-        if (!this.id) {
-            this.id = uuid()
-        }
 
+        if (!this.id) {
+            this.id = uuid();
+        }
 
         const [allBooks] = await pool.execute('SELECT * FROM `books` ORDER BY `title` ASC') as BookRecordResults;
         const [found] = allBooks.filter(obj => obj.title.toUpperCase() === this.title.toUpperCase());
@@ -101,12 +98,12 @@ export class BookRecord implements BookEntity {
     async update(obj: BookRecord): Promise<void> {
 
         await pool.execute("UPDATE `books` SET `title` = :title, `author` = :author, `status` = :status, `pages` = :pages WHERE `id` = :id", {
-            title: obj.title,
-            author: obj.author,
+            title: titleRefactor(obj.title),
+            author: nameRefactor(obj.author),
             pages: obj.pages,
             status: obj.status,
             id: this.id,
-        })
+        });
     }
 
     async checkUpdatedBookTitle(id: string, titleUpdate: string): Promise<BookRecord | undefined> {
