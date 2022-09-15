@@ -17,7 +17,7 @@
 
 # :star2: About the Project
 
-* a small variaton of to do list
+* a small variation of a todo list
 * it allows you to add your favourite books
 
 ## :space_invader: Tech Stack
