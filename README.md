@@ -51,7 +51,7 @@
 - editing existing ones :heavy_check_mark:
 - deleting specific one or all at once :heavy_check_mark:
 - you can search your book by title or by author name :heavy_check_mark:
-- you can list your positions by title, author, page number or by status
+- you can list your positions by title, author, page number or by status :heavy_check_mark:
 
 # :toolbox: Getting Started
 
