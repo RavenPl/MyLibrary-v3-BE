@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9145f6fa-bae6-4aca-a132-91dc3460bc2b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2BSAh6tlzHxbBYL96a0IVY6RYZn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Users\Ja\Desktop\MegaK\OdinProject\Projekty\My library - v3, BE i FE\my-library-BE\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ja\Desktop\MegaK\OdinProject\Projekt\my-library-BE\types\book" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Jest.book-record.test.ts">
+    <configuration name="Duplicate title should throw ValidateError" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/book-record.test.ts" />
+      <test-names>
+        <test-name value="Duplicate title should throw ValidateError" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Validates invalid pages" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/book-record.test.ts" />
+      <test-names>
+        <test-name value="Validates invalid pages" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="book-record.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/tests/book-record.test.ts" />
+      <method v="2" />
+    </configuration>
+    <configuration name="book.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/tests/book.test.ts" />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start:dev" />
+        <item itemvalue="Jest.book-record.test.ts" />
+        <item itemvalue="Jest.book.test.ts" />
+        <item itemvalue="Jest.Duplicate title should throw ValidateError" />
+        <item itemvalue="Jest.Validates invalid pages" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9145f6fa-bae6-4aca-a132-91dc3460bc2b" name="Default Changelist" comment="" />
+      <created>1656889237538</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656889237538</updated>
+      <workItem from="1656889241877" duration="1845000" />
+      <workItem from="1656919357930" duration="30611000" />
+      <workItem from="1657008384023" duration="10739000" />
+      <workItem from="1657094829885" duration="9122000" />
+      <workItem from="1657184387555" duration="5015000" />
+      <workItem from="1657270128272" duration="6806000" />
+      <workItem from="1657379931974" duration="2420000" />
+      <workItem from="1657468229226" duration="3620000" />
+      <workItem from="1657531420219" duration="15012000" />
+      <workItem from="1657616953693" duration="11678000" />
+      <workItem from="1657662014643" duration="2094000" />
+      <workItem from="1657712547208" duration="19564000" />
+      <workItem from="1657787816454" duration="5876000" />
+      <workItem from="1657879191108" duration="19940000" />
+      <workItem from="1662461063162" duration="988000" />
+      <workItem from="1662487451821" duration="2497000" />
+      <workItem from="1663084702230" duration="2296000" />
+      <workItem from="1663195779601" duration="4824000" />
+    </task>
+    <task id="LOCAL-00001" summary="First commit - upload old project to refactor">
+      <created>1656920102785</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656920102785</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Deleted handlebars from the project and refactor responses">
+      <created>1656923172423</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656923172423</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added Jest and create tests.">
+      <created>1656951161053</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656951161053</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added cors.">
+      <created>1656952450022</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656952450022</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Refactor types to connect them with FE">
+      <created>1656964647173</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656964647173</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Deleted home router, added rate limiter and and added cors adress to config example">
+      <created>1657913305058</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657913305058</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Created functions for refactoring title and author inputs into database">
+      <created>1657913381940</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657913381940</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Updated validation for book-record">
+      <created>1657914183737</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657914183737</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Small fixes of the code syntax.">
+      <created>1663199245961</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1663199245961</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Install helmet middleware.">
+      <created>1663264257320</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1663264257320</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="First commit - upload old project to refactor" />
+    <MESSAGE value="Deleted handlebars from the project and refactor responses" />
+    <MESSAGE value="Added Jest and create tests." />
+    <MESSAGE value="Added cors." />
+    <MESSAGE value="Refactor types to connect them with FE" />
+    <MESSAGE value="Deleted home router, added rate limiter and and added cors adress to config example" />
+    <MESSAGE value="Created functions for refactoring title and author inputs into database" />
+    <MESSAGE value="Updated validation for book-record" />
+    <MESSAGE value="Small fixes of the code syntax." />
+    <MESSAGE value="Readme update." />
+    <MESSAGE value="Install helmet middleware." />
+    <option name="LAST_COMMIT_MESSAGE" value="Install helmet middleware." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+</project>
