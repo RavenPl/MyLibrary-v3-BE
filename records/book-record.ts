@@ -5,9 +5,9 @@ import {BookEntity, BookRecordResults} from "../types";
 import {ResultSetHeader} from "mysql2";
 import {nameRefactor, titleRefactor} from "../utils/inputRefactors";
 
-export class BookRecord implements BookEntity {
+export class BookRecord {
 
-    id?: string;
+    id: string;
     title: string;
     author: string;
     pages: number;
