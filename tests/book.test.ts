@@ -34,7 +34,7 @@ test('BookRecord.getOne() proper data returns proper record but wrond data retur
 
 test('BookRecord.getAll() should returns data in [] and empty list should returns null', async () => {
 
-    const books = await BookRecord.getAll();
+    const books = await BookRecord.getAll("author", "");
 
     if (books) {
         expect(books[0].id).toBeDefined()

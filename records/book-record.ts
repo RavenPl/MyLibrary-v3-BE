@@ -15,7 +15,6 @@ export class BookRecord {
 
     constructor(obj: BookEntity) {
 
-        this.id = obj.id;
         this.title = obj.title;
         this.author = obj.author;
         this.pages = obj.pages;

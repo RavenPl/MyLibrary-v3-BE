@@ -7,84 +7,87 @@ export const bookRouter = Router();
 
 bookRouter
 
-    .get('/', async (req, res) => {
+    .get("/", async (req, res) => {
+      const {search, category} = req.query as {
+        search: string;
+        category: string;
+      };
 
-        const {search, category} = req.query as { search: string, category: string };
-        const booksList = await BookRecord.getAll(search.trim(), category);
+      const booksList = await BookRecord.getAll(search, category);
 
-        res.json({booksList})
+      res.json({booksList});
     })
 
-    .get('/:id', async (req, res) => {
+    .get("/:id", async (req, res) => {
+      const book = await BookRecord.getOne(req.params.id);
+      if (!book) {
+        throw new NoFoundError();
+      }
 
-        const book = await BookRecord.getOne(req.params.id);
-        if (!book) {
-            throw new NoFoundError()
-        }
-
-        res.json({book})
+      res.json({book});
     })
 
-    .post('/', async (req, res) => {
+    .post("/", async (req, res) => {
+      const {title, author, status} = req.body as BookRecord;
+      const newBook = new BookRecord({
+        ...req.body,
+        title: title.trim(),
+        author: author.trim(),
+        status: status === "" ? "not read" : status,
+      });
 
-        const {title, author, status} = req.body as BookRecord;
-        const newBook = new BookRecord({
-            ...req.body,
-            title: title.trim(),
-            author: author.trim(),
-            status: (status === "") ? "not read" : status
-        });
+      await newBook.insert();
 
-        await newBook.insert();
-
-        res.json({newBook})
+      res.json({newBook});
     })
 
-    .delete('/delete/all', async (req, res) => {
+    .delete("/delete/all", async (req, res) => {
+      await BookRecord.clearList();
 
-        await BookRecord.clearList();
-
-        res.json({
-            message: true,
-        })
+      res.json({
+        message: true,
+      });
     })
 
-    .delete('/:id', async (req, res) => {
+    .delete("/:id", async (req, res) => {
+      const book = await BookRecord.getOne(req.params.id);
+      if (book === null) {
+        throw new NoFoundError();
+      }
 
-        const book = await BookRecord.getOne(req.params.id);
-        if (book === null) {
-            throw new NoFoundError();
-        }
+      await book.delete();
 
-        await book.delete();
-
-        res.json({
-            book,
-        })
+      res.json({
+        book,
+      });
     })
 
-    .patch('/:id', async (req, res) => {
+    .patch("/:id", async (req, res) => {
+      const editedBook = (await BookRecord.getOne(req.params.id)) as BookRecord;
 
-        const editedBook = await BookRecord.getOne(req.params.id) as BookRecord;
+      if (editedBook === null) {
+        throw new NoFoundError();
+      }
 
-        if (editedBook === null) {
-            throw new NoFoundError();
-        }
+      const {title, author} = req.body as UpdatedBookRecord;
+      const updatedBook = new BookRecord({
+        ...req.body,
+        title: title.trim(),
+        author: author.trim(),
+      });
 
-        const {title, author} = req.body as UpdatedBookRecord;
-        const updatedBook = new BookRecord({
-            ...req.body,
-            title: title.trim(),
-            author: author.trim(),
-        });
+      const result =
+          editedBook.id &&
+          (await editedBook.checkUpdatedBookTitle(
+              editedBook.id,
+              updatedBook.title
+          ));
 
-        const result = editedBook.id && await editedBook.checkUpdatedBookTitle(editedBook.id, updatedBook.title);
+      if (result) {
+        throw new ValidationError("You already have this title in your library!");
+      }
 
-        if (result) {
-            throw new ValidationError('You already have this title in your library!')
-        }
+      await editedBook.update(updatedBook);
 
-        await editedBook.update(updatedBook);
-
-        res.json(editedBook)
-    })
+      res.json(editedBook);
+    });
