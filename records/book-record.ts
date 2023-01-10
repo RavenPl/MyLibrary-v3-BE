@@ -41,10 +41,13 @@ export class BookRecord {
             }) as BookRecordResults;
 
             return resp.length === 0 ? null : resp.map(obj => new BookRecord(obj))
-        } else {
+        } else if (category === "author") {
             const [resp] = await pool.execute('SELECT * FROM `books` WHERE `author` LIKE :value ORDER BY `title` ASC', {
                 value: `${value}%`,
             }) as BookRecordResults;
+            return resp.length === 0 ? null : resp.map(obj => new BookRecord(obj))
+        } else {
+            const [resp] = await pool.execute('SELECT * FROM `books`') as BookRecordResults;
             return resp.length === 0 ? null : resp.map(obj => new BookRecord(obj))
         }
     }

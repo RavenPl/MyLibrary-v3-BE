@@ -5,10 +5,11 @@
     "noImplicitAny": true,
     "preserveConstEnums": true,
     "sourceMap": true,
+    "module": "CommonJS",
     "target": "es6",
     "downlevelIteration": true,
     "lib": [
-      "es6",
+      "es6"
     ],
     "outDir": "dist",
     "experimentalDecorators": true,
