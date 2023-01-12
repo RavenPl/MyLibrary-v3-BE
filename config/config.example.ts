@@ -4,6 +4,4 @@
 //     dbDatabase: 'databaseName',
 //     dbPassword: "",
 //     corsOrigin: 'http://localhost:3000',
-//     namedPlaceholders: true,
-//     decimalNumbers: true,
 // }
