@@ -1,19 +1,19 @@
 import {pool} from "../utils/db";
 import {v4 as uuid} from 'uuid'
 import {ValidationError} from "../utils/errors";
-import {BookRecordResults} from "../types";
+import {BookEntity, BookRecordResults} from "../types";
 import {ResultSetHeader} from "mysql2";
 import {nameRefactor, titleRefactor} from "../utils/inputRefactors";
 
 export class BookRecord {
 
-    id: string;
+    id?: string;
     title: string;
     author: string;
     pages: number;
     status: string;
 
-    constructor(obj: BookRecord) {
+    constructor(obj: BookEntity) {
 
         this.id = obj.id;
         this.title = obj.title;
