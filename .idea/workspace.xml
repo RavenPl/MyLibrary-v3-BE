@@ -4,9 +4,9 @@
     <list default="true" id="9145f6fa-bae6-4aca-a132-91dc3460bc2b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/config.example.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.example.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/records/book-record.ts" beforeDir="false" afterPath="$PROJECT_DIR$/records/book-record.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/db.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/db.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/book.ts" beforeDir="false" afterPath="$PROJECT_DIR$/routes/book.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +151,8 @@
       <workItem from="1666808198736" duration="179000" />
       <workItem from="1667480632218" duration="25000" />
       <workItem from="1673288214345" duration="6628000" />
-      <workItem from="1673344846146" duration="3676000" />
+      <workItem from="1673344846146" duration="14371000" />
+      <workItem from="1673429663840" duration="3379000" />
     </task>
     <task id="LOCAL-00001" summary="First commit - upload old project to refactor">
       <created>1656920102785</created>
@@ -244,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673309813878</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Corrected main endpoint and added pwd to config">
+      <created>1673373699375</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1673373699375</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +286,8 @@
     <MESSAGE value="Update readme." />
     <MESSAGE value="Code fixes." />
     <MESSAGE value="Make adjustments in code to allow deploy." />
-    <option name="LAST_COMMIT_MESSAGE" value="Make adjustments in code to allow deploy." />
+    <MESSAGE value="Corrected main endpoint and added pwd to config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected main endpoint and added pwd to config" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
