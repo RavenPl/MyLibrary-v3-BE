@@ -1,8 +1,12 @@
 <div align="center">  
-  <h1>My library [BE] - v3</h1>  
+  <h1>My library [BE] - v3</h1>
+  
+# :video_game: <a href="https://library.networkmanager.pl/books">View Demo</a> 
+###  :link: <a href="https://github.com/RavenPl/MyLibrary-v3-FE">Frontend repository</a> 
 </div>  
 <!-- Table of Contents -->  
 
+<br/>
 <br/>
 
 # :notebook_with_decorative_cover: Table of Contents
@@ -12,7 +16,7 @@
     * [Features](#dart-features)
     * [Environment Variables](#key-environment-variables)
 - [Getting Started](#toolbox-getting-started)
-    * [Prerequisites](#bangbang-prerequisites)
+    * [Prerequisites](#heavy_exclamation_mark-prerequisites)
     * [Run Locally](#running-run-locally)
 - [Usage](#eyes-usage)
 - [Project Status](#hammer_and_wrench-project-status)
@@ -49,8 +53,18 @@
   </ul>  
 </details>  
 
-<br/>
+## Technology used
 
+<p align="left">
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> &nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> &nbsp;&nbsp;&nbsp; 
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> &nbsp; &nbsp;&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/express/express.png" alt="express js" height="40"/> &nbsp; &nbsp;&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> &nbsp; &nbsp;&nbsp;
+<img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>&nbsp;&nbsp;&nbsp;
+</p>
+
+<br/>
 <!-- Features -->  
 
 # :dart: Features
