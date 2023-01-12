@@ -64,7 +64,8 @@ fields with your correct data, for instance:
 const config = {  
     dbHost: 'localhost',  
     dbUser: 'user',  
-    dbDatabase: 'databaseName',  
+    dbDatabase: 'databaseName',
+    dbPassword: "",
     corsOrigin: 'http://localhost:3000',  
 }
 ```
