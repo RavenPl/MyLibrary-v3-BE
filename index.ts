@@ -16,7 +16,7 @@ app.use(helmet());
 app.use(cors({
     origin: config.corsOrigin,
 }));
-app.use('/books', bookRouter);
+app.use('/api/books', bookRouter);
 app.use(rateLimit({
     windowMs: 5 * 60 * 1000,
     max: 100,

@@ -13,13 +13,15 @@ bookRouter
         category: string;
       };
 
-      const booksList = await BookRecord.getAll(search, category);
+        const booksList = await BookRecord.getAll(search, category);
 
       res.json({booksList});
     })
 
     .get("/:id", async (req, res) => {
+
       const book = await BookRecord.getOne(req.params.id);
+
       if (!book) {
         throw new NoFoundError();
       }
