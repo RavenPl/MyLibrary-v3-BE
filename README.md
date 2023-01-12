@@ -3,6 +3,8 @@
 </div>  
 <!-- Table of Contents -->  
 
+<br/>
+
 # :notebook_with_decorative_cover: Table of Contents
 
 - [About the Project](#star2-about-the-project)
@@ -15,12 +17,16 @@
 - [Usage](#eyes-usage)
 - [Project Status](#hammer_and_wrench-project-status)
 
+<br/>
+
 # :star2: About the Project
 
 * a small variation of a todo list
 * it allows you to add your favourite books
 
-## :space_invader: Tech Stack
+<br/>
+
+# :space_invader: Tech Stack
 
 <details>  
   <summary>Server</summary>  
@@ -43,15 +49,19 @@
   </ul>  
 </details>  
 
+<br/>
+
 <!-- Features -->  
 
-## :dart: Features
+# :dart: Features
 
 - adding a new book to the list :heavy_check_mark:
 - editing existing ones :heavy_check_mark:
 - deleting specific one or all at once :heavy_check_mark:
 - you can search your book by title or by author name :heavy_check_mark:
 - you can list your positions by title, author, page number or by status :heavy_check_mark:
+
+<br/>
 
 # :toolbox: Getting Started
 
@@ -72,7 +82,7 @@ const config = {
 
 <!-- Prerequisites -->  
 
-### :bangbang: Prerequisites
+### :heavy_exclamation_mark: Prerequisites
 
 This project uses npm as package manager
 
@@ -80,9 +90,11 @@ This project uses npm as package manager
  npm install --global npm  
 ```  
 
+<br/>
+
 <!-- Run Locally -->  
 
-## :running: Run Locally
+# :running: Run Locally
 
 Clone the project
 
@@ -107,7 +119,7 @@ Start the server
 ```bash  
  npm start  
 ```  
-
+<br/>
 <!-- Usage -->  
 
 # :eyes: Usage
@@ -125,11 +137,19 @@ Start the server
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
  ```
+ 
+<br/>
 
-4. In order to work properly the app needs to run with front side.
-5. Link to frontend repository [_link_](https://github.com/RavenPl/MyLibrary-v3-FE.git).
+# :deciduous_tree: Lessons Learned
+
+<p> :ballot_box_with_check: putting together JavaScript, Typescript, mysql2 into one, working application</p>
+<p> :ballot_box_with_check: creating and running few test using Jest</p>
+<p> :ballot_box_with_check: adding basic security middlewares: express-rate-limit and helmet</p>
+<p> :ballot_box_with_check: fixing CORS problem</p>
+
+<br/>
 
 # :hammer_and_wrench: Project Status
 
-The project is closed. Next version will be with Nest framework.
+The project is closed.
 
